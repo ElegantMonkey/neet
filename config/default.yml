@@ -1,0 +1,6 @@
+# Path to the folder containing your animes.
+anime_folder: /home/user/Videos/Anime
+
+# Player to be used. On Windows, you probably want to pass an
+# absolute path.
+player: mpv
