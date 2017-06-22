@@ -1,4 +1,4 @@
-# neet - yet another anime library manager
+# neet - yet another cli anime library manager
 [![Build Status](https://travis-ci.org/ElegantMonkey/neet.svg?branch=master)](https://travis-ci.org/ElegantMonket/neet)
 
 ## Requirements
@@ -20,3 +20,10 @@ Place it in:
 - **Windows:** `%APPDATA%\neet\config.yml`
 - **OS X:** `~/Library/Application Support/neet/config.yml`
 - **Linux/BSDs:** `~/.config/neet/config.yml`
+
+## Usage
+### Commands
+- **add:** Add an anime. Current episode is optional. `neet add "anime name" /home/user/anime_folder/ [current_episode]`
+- **list:** List animes, and progress in the series. `neet list`
+- **play:** Play an anime. `play current` plays the current episode; `play next` plays the next episode, and keeps playing after the episode ends. Defaults to `play next`. `neet play "anime name" next` 
+- **set:** Changes anime configs. `neet set "anime name" [field] [value]`, where field can be either `name` or `episode`.
