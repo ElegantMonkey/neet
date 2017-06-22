@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	set = kingpin.Command("set", "change anime settings")
-	setName = set.Arg("anime_name", "anime name").Required().String()
+	set      = kingpin.Command("set", "change anime settings")
+	setName  = set.Arg("anime_name", "anime name").Required().String()
 	setField = set.Arg("field", "field to be set (name, episode)").Required().Enum("name", "episode")
 	setValue = set.Arg("value", "value to be set").Required().String()
 )

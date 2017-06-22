@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	add = kingpin.Command("add", "Add an anime")
-	addName = add.Arg("name", "anime name").Required().String()
-	addFolder = add.Arg("folder", "anime folder").Required().ExistingDir()
+	add               = kingpin.Command("add", "Add an anime")
+	addName           = add.Arg("name", "anime name").Required().String()
+	addFolder         = add.Arg("folder", "anime folder").Required().ExistingDir()
 	addCurrentEpisode = add.Arg("current_episode", "current episode").Int()
 )
 
@@ -21,8 +21,8 @@ func Add() {
 	}
 
 	a := anime.Anime{
-		Folder: *addFolder,
-		Name: *addName,
+		Folder:         *addFolder,
+		Name:           *addName,
 		CurrentEpisode: currentEpisode,
 	}
 	err := a.SaveConfig()

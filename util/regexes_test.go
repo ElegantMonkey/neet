@@ -29,8 +29,8 @@ func TestSearch(T *testing.T) {
 	// search string -> expected num of matches
 	searches := map[string]int{
 		"re creators": 1,
-		"shingeki": 2,
-		"bahamut": 1,
+		"shingeki":    2,
+		"bahamut":     1,
 	}
 
 	for search, expected := range searches {

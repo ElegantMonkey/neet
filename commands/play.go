@@ -10,13 +10,13 @@ import (
 )
 
 var (
-	play = kingpin.Command("play", "Play an anime")
+	play     = kingpin.Command("play", "Play an anime")
 	playName = play.Arg("name", "anime name").Required().String()
 	playMode = play.Arg("mode", "play mode (current, next, default is next)").Default("next").Enum("current", "next")
 )
 
 func playEpisode(a anime.Anime, targetEpisode int) error {
-	total := a.NumEpisodes();
+	total := a.NumEpisodes()
 	if targetEpisode > total {
 		return fmt.Errorf("Target episode (%d) is bigger than the number of episodes (%d).\n", targetEpisode, total)
 	}
@@ -38,12 +38,12 @@ func playNext(a anime.Anime, targetEpisode int) {
 	}
 
 	total := a.NumEpisodes()
-	if targetEpisode + 1 <= total {
-		log.Printf("Setting current episode to %d of %d", targetEpisode + 1, total)
+	if targetEpisode+1 <= total {
+		log.Printf("Setting current episode to %d of %d", targetEpisode+1, total)
 		a.CurrentEpisode = targetEpisode + 1
 
 		a.SaveConfig()
-		playNext(a, targetEpisode + 1)
+		playNext(a, targetEpisode+1)
 	}
 }
 
@@ -63,7 +63,7 @@ func Play() {
 			return
 		}
 	case "next":
-		playNext(anime, anime.CurrentEpisode + 1)
+		playNext(anime, anime.CurrentEpisode+1)
 	default:
 		// This shouldn't happen, because kingpin handles it
 		// but just in case...

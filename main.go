@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/ElegantMonkey/neet/config"
 	"github.com/ElegantMonkey/neet/commands"
+	"github.com/ElegantMonkey/neet/config"
 
 	"fmt"
-	"log"
 	"io/ioutil"
+	"log"
 )
 
 func main() {

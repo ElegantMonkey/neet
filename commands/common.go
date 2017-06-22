@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"github.com/ElegantMonkey/neet/anime"
 	"errors"
 	"fmt"
+	"github.com/ElegantMonkey/neet/anime"
 )
 
 func SelectAnime(searchTerm string) (a anime.Anime, err error) {

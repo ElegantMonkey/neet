@@ -4,9 +4,9 @@ import (
 	"github.com/ElegantMonkey/neet/util"
 	"github.com/ElegantMonkey/neet/util/title_parser"
 
-	"path/filepath"
-	"log"
 	"io/ioutil"
+	"log"
+	"path/filepath"
 	"sort"
 )
 
@@ -19,7 +19,7 @@ type Episode struct {
 func EpisodeFromPath(path string) Episode {
 	return Episode{
 		Path: path,
-		ID: title_parser.Episode(path),
+		ID:   title_parser.Episode(path),
 	}
 }
 
@@ -63,7 +63,7 @@ func (a *Anime) NumEpisodes() int {
 		}
 	}
 
-	return max 
+	return max
 }
 
 func getEpisode(episodes []Episode, episode int) *Episode {

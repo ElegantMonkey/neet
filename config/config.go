@@ -8,7 +8,7 @@ import (
 
 type Config struct {
 	AnimeFolder string `yaml:"anime_folder"`
-	Player string `yaml:"player"`
+	Player      string `yaml:"player"`
 }
 
 var Conf *Config

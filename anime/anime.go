@@ -8,9 +8,9 @@ import (
 )
 
 type Anime struct {
-	Folder string `yaml:"-"` // Hide the Folder field from yaml, as it's the same folder as the anime cfg file.
-	Name string `yaml:"name,omitempty"`
-	CurrentEpisode int `yaml:"current_episode,omitempty"`
+	Folder         string `yaml:"-"` // Hide the Folder field from yaml, as it's the same folder as the anime cfg file.
+	Name           string `yaml:"name,omitempty"`
+	CurrentEpisode int    `yaml:"current_episode,omitempty"`
 }
 
 func (a *Anime) LoadConfig(path string) error {
@@ -43,4 +43,3 @@ func (a *Anime) SaveConfig() error {
 	}
 	return nil
 }
-
