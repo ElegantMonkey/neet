@@ -5,8 +5,11 @@ import (
 	"strconv"
 )
 
-// literally stolen from flexget
+// RegexpNotInWord matches the pattern if and only if it
+// isn't in a word (e.g. "\d" matches "A 1 B" but won't match
+// "A1 B").
 func RegexpNotInWord(pattern string) *regexp.Regexp {
+	// literally stolen from flexget
 	pattern = `(?:[\W_])` + pattern + `(?:[\W_])`
 	return regexp.MustCompile(pattern)
 }
