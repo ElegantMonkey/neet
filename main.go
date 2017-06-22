@@ -15,7 +15,7 @@ func main() {
 		log.SetOutput(ioutil.Discard)
 	}
 
-	err := config.Parse("config/default.yml")
+	err := config.Load()
 	if err != nil {
 		fmt.Printf("Error while parsing config: %v\n", err)
 		return
