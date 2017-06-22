@@ -5,7 +5,7 @@
 - golang 1.8+
 
 ## Installation
-- Configure $GOPATH
+- [Ensure your Go install is properly configured](https://golang.org/doc/install#install)
 - Run:
 ```
 go get github.com/ElegantMonkey/neet
@@ -17,6 +17,6 @@ The program will be available as `neet`.
 The default configuration is borderline useless, so we'll need to create our own. A sample config file can be found under `config/default.yml`.
 
 Place it in:
-- *Windows:* `%APPDATA%\neet\config.yml`
-- *OS X:* `~/Library/Application Support/neet/config.yml`
-- *Linux/BSDs:* `~/.config/neet/config.yml`
+- **Windows:** `%APPDATA%\neet\config.yml`
+- **OS X:** `~/Library/Application Support/neet/config.yml`
+- **Linux/BSDs:** `~/.config/neet/config.yml`
