@@ -9,7 +9,7 @@ import (
 func SelectAnime(searchTerm string) (a anime.Anime, err error) {
 	animes, err := anime.ScanFolderFromConfig()
 	if err != nil {
-		fmt.Printf("Error while loading animes from folder: %v\n")
+		fmt.Printf("Error while loading animes from folder: %v\n", err)
 		return
 	}
 
