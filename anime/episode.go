@@ -10,12 +10,16 @@ import (
 	"sort"
 )
 
+// Episodes stores info about an Episode. Currently only holds the
+// episode number, but might contain more metadata in the future.
 type Episode struct {
 	Path string
 	// Currently only an int, but this might change (because why follow standards right)
 	ID int
 }
 
+// EpisodeFromPath builds a Episode struct from a path,
+// reading some metadata.
 func EpisodeFromPath(path string) Episode {
 	return Episode{
 		Path: path,
@@ -23,6 +27,8 @@ func EpisodeFromPath(path string) Episode {
 	}
 }
 
+// Episodes goes through the anime folder, returning a list of episodes
+// currently available.
 func (a *Anime) Episodes() (out []Episode, err error) {
 	files, err := ioutil.ReadDir(a.Folder)
 
@@ -48,7 +54,7 @@ func (a *Anime) Episodes() (out []Episode, err error) {
 	return
 }
 
-// Returns the highest-number episode found. Returns 0 on error or if no episodes were found.
+// NumEpisodes returns the highest-number episode found. Returns 0 on error or if no episodes were found.
 func (a *Anime) NumEpisodes() int {
 	eps, err := a.Episodes()
 	if err != nil {

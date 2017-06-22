@@ -7,12 +7,14 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
+// Anime stores information about an Anime, such as name and current episode.
 type Anime struct {
 	Folder         string `yaml:"-"` // Hide the Folder field from yaml, as it's the same folder as the anime cfg file.
 	Name           string `yaml:"name,omitempty"`
 	CurrentEpisode int    `yaml:"current_episode,omitempty"`
 }
 
+// LoadConfig reads the config from path into the Anime struct
 func (a *Anime) LoadConfig(path string) error {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
